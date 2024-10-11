@@ -1,5 +1,5 @@
 <?php
-$servername = "db1";
+$servername = "movieDB";
 $username = "root";
 $password = "admin";
 $dbname = "moviedb";
