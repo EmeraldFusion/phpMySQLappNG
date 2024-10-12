@@ -18,8 +18,8 @@
 --
 -- Table structure for table `book_category_relationship`
 --
-create DATABASE bookstore;
-use bookstore;
+--create DATABASE bookstore;
+--use bookstore;
 
 DROP TABLE IF EXISTS `book_category_relationship`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
