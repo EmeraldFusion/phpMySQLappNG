@@ -19,14 +19,16 @@
 -- Table structure for table `book_category_relationship`
 --
 --create DATABASE bookstore;
---use bookstore;
+use bookstore;
 
 DROP TABLE IF EXISTS `book_category_relationship`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `book_category_relationship` (
+  `_id` int(11) NOT NULL AUTO_INCREMENT,
   `_book_id` int(11) DEFAULT NULL,
   `_cat_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`_id`),
   KEY `bookID_idx` (`_book_id`),
   KEY `catID_idx` (`_cat_id`),
   CONSTRAINT `bookID` FOREIGN KEY (`_book_id`) REFERENCES `books` (`_id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -40,7 +42,7 @@ CREATE TABLE `book_category_relationship` (
 
 LOCK TABLES `book_category_relationship` WRITE;
 /*!40000 ALTER TABLE `book_category_relationship` DISABLE KEYS */;
-INSERT INTO `book_category_relationship` VALUES (2,11),(3,11),(4,11),(5,11),(6,11),(7,11),(2,4),(3,4),(4,4),(5,4),(6,4),(7,4),(1,11),(1,4),(8,11),(14,3),(15,1),(15,4),(16,21),(17,4),(17,6),(18,5),(19,8),(19,11);
+INSERT INTO `book_category_relationship` VALUES (1,2,11),(2,3,11),(3,4,11),(4,5,11),(5,6,11),(6,7,11),(7,2,4),(8,3,4),(9,4,4),(10,5,4),(11,6,4),(12,7,4),(13,1,11),(14,1,4),(15,8,11),(16,14,3),(17,15,1),(18,15,4),(19,16,21),(20,17,4),(21,17,6),(22,18,5),(23,19,8),(24,19,11);
 /*!40000 ALTER TABLE `book_category_relationship` ENABLE KEYS */;
 UNLOCK TABLES;
 
