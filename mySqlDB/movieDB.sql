@@ -20,7 +20,7 @@
 --
 
 --create DATABASE moviedb;
---use moviedb;
+use moviedb;
 
 DROP TABLE IF EXISTS `films`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -79,8 +79,10 @@ DROP TABLE IF EXISTS `genre_film_relationship`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `genre_film_relationship` (
+  `_id` int(11) NOT NULL AUTO_INCREMENT,
   `film_id` int(11) DEFAULT NULL,
   `genre_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`_id`),
   KEY `film_id_idx` (`film_id`),
   KEY `genre_id_idx` (`genre_id`),
   CONSTRAINT `film_id` FOREIGN KEY (`film_id`) REFERENCES `films` (`_id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -94,7 +96,59 @@ CREATE TABLE `genre_film_relationship` (
 
 LOCK TABLES `genre_film_relationship` WRITE;
 /*!40000 ALTER TABLE `genre_film_relationship` DISABLE KEYS */;
-INSERT INTO `genre_film_relationship` VALUES (15,1),(1,14),(1,14),(1,14),(1,14),(2,14),(3,14),(4,14),(5,14),(6,14),(7,14),(8,14),(9,14),(10,1),(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),(9,1),(10,1),(10,10),(1,10),(2,10),(3,10),(4,10),(5,10),(6,10),(7,10),(8,10),(9,10),(10,10),(13,9),(13,4),(11,6),(11,1),(12,6),(16,6),(16,8),(17,3),(17,2),(17,8),(17,9),(17,0),(19,8),(19,11),(19,16),(19,17),(20,4),(20,6),(20,8),(20,11);
+INSERT INTO `genre_film_relationship` VALUES 
+  (1,15,1),
+  (2,1,14),
+  (3,2,14),
+  (4,3,14),
+  (5,4,14),
+  (6,5,14),
+  (7,6,14),
+  (8,7,14),
+  (9,8,14),
+  (10,9,14),
+  (11,10,1),
+  (12,1,1),
+  (13,2,1),
+  (14,3,1),
+  (15,4,1),
+  (16,5,1),
+  (17,6,1),
+  (18,7,1),
+  (19,8,1),
+  (20,9,1),
+  (21,10,1),
+  (22,10,10),
+  (23,1,10),
+  (24,2,10),
+  (25,3,10),
+  (26,4,10),
+  (27,5,10),
+  (28,6,10),
+  (29,7,10),
+  (30,8,10),
+  (31,9,10),
+  (32,10,10),
+  (33,13,9),
+  (34,13,4),
+  (35,11,6),
+  (36,11,1),
+  (37,12,6),
+  (38,16,6),
+  (39,16,8),
+  (40,17,3),
+  (41,17,2),
+  (42,17,8),
+  (43,17,9),
+  (44,17,0),
+  (45,19,8),
+  (46,19,11),
+  (47,19,16),
+  (48,19,17),
+  (49,20,4),
+  (50,20,6),
+  (51,20,8),
+  (52,20,11);
 /*!40000 ALTER TABLE `genre_film_relationship` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
